@@ -4,6 +4,8 @@
 // @version       1.0.0
 // @description   Fixes issues with funimation.com
 // @author        Mike "yo1dog" Moore
+// @homepageURL   https://github.com/yo1dog/funimationFixes#readme
+// @icon          https://github.com/yo1dog/funimationFixes/raw/master/icon.ico
 // @match         *://www.funimation.com/*
 // @run-at        document-end
 // ==/UserScript==

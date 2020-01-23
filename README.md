@@ -1,4 +1,4 @@
-# Funimation Fixes
+# ![](icon.ico) Funimation Fixes
 
 Fixes issues with funimation.com
 
