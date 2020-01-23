@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "alwaysStrict": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "lib": [ "dom", "es2020" ]
+  },
+  "include": [
+    "./*.js",
+  ]
+}
