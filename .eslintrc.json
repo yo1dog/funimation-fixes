@@ -5,15 +5,16 @@
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "script",
-    "project": "./jsconfig.json"
+    "project": "jsconfig.json"
   },
   "env": {
-    "browser": true,
+    "es6": true,
     "node": false,
-    "es6": true
+    "browser": true,
+    "greasemonkey": true
   },
   "rules": {
-    // #region Base
+    // --- JavaScript ---
     // Possible Errors
     "no-template-curly-in-string": "error",
     
@@ -91,9 +92,8 @@
     "no-var": "error",
     "prefer-arrow-callback": ["error", {"allowNamedFunctions": true}],
     "prefer-const": "error"
-    // #endregion
-    
-    // #region Project Specific
-    // #endregion
+
+    // --- Project Specific ---
+
   }
 }
