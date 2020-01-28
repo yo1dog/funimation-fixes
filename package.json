@@ -1,6 +1,6 @@
 {
   "name": "funimation-fixes",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Funimation Fixes",
   "main": "funimationFixes.user.js",
   "scripts": {

@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name          Funimation Fixes
 // @namespace     http://yo1.dog
-// @version       1.0.1
+// @version       1.0.2
 // @description   Fixes issues with funimation.com
 // @author        Mike "yo1dog" Moore
 // @homepageURL   https://github.com/yo1dog/funimation-fixes#readme
