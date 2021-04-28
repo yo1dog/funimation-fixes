@@ -27,29 +27,40 @@ function funimationFixes() {
   console.log('funimationFixes - start');
   
   // get the player iframe
-  const playerIFrame = /** @type {HTMLIFrameElement | undefined} */(
-    document.getElementById('player')
-  );
-  if (!playerIFrame) {
-    return;
-  }
-  
-  playerIFrame.addEventListener('load', () => {
-    console.log('funimationFixes - player iframe loaded');
-    
-    const playerWindow = playerIFrame.contentWindow;
-    if (!playerWindow) {
-      console.error(new Error(`Unable to get window from player iframe.`));
-      return;
-    }
-    
-    execOnPage(playerWindow, playerFixes)
-    .catch(err => {
-      console.error(err);
+  waitForPlayer(playerIFrame => {
+    playerIFrame.addEventListener('load', () => {
+      console.log('funimationFixes - player iframe loaded');
+
+      const playerWindow = playerIFrame.contentWindow;
+      if (!playerWindow) {
+        console.error(new Error(`Unable to get window from player iframe.`));
+        return;
+      }
+
+      execOnPage(playerWindow, playerFixes)
+      .catch(err => {
+        console.error(err);
+      });
     });
   });
 }
 
+/**
+ * @param {(playerIFrame: HTMLIFrameElement) => void} cb 
+ */
+function waitForPlayer(cb) {
+  const observer = new MutationObserver(mutations => {
+    console.log('funimationFixes - mutation');
+    const playerIFrame = /** @type {HTMLIFrameElement | undefined} */(
+      document.getElementById('player')
+    );
+    if (playerIFrame) {
+      observer.disconnect();
+      cb(playerIFrame);
+    }
+  });
+  observer.observe(document.documentElement, {childList: true, subtree: true});
+}
 
 function playerFixes() {
   (async function run() {
